@@ -1,3 +1,3 @@
 # EchoFN
 
-__**Discord Server**__ : 
+__Discord Server__ : 
