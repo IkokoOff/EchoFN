@@ -1,6 +1,6 @@
-![1](https://github.com/ectrc/snow/assets/13946988/fc007f07-3878-46e7-b990-668fc3d758d0)
+![1]()
 
-# Snow
+# EchoFN
 
 > Performance first, feature-rich universal Fortnite private server backend written in Go.
 
