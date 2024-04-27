@@ -3,8 +3,6 @@ package main
 import (
 	_ "embed"
 	"fmt"
-	"net/http"
-	"log"
 
 	"github.com/ectrc/snow/aid"
 	"github.com/ectrc/snow/discord"
@@ -21,17 +19,6 @@ import (
 
 //go:embed config.ini
 var configFile []byte
-
-func handler(w http.ResponseWriter, r *http.Request) {
-    http.ServeFile(w, r, "index.html")
-}
-
-func main() {
-    http.HandleFunc("/", handler)
-
-    log.Println("Serveur en cours d'exécution sur :8080...")
-    log.Fatal(http.ListenAndServe(":8080", nil))
-}
 
 func init() {
 	aid.LoadConfig(configFile) 
