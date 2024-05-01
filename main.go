@@ -16,6 +16,7 @@ import (
 	"github.com/goccy/go-json"
 	"github.com/gofiber/contrib/websocket"
 	"github.com/gofiber/fiber/v2"
+	"github.com/labstack/echo"
 )
 
 //go:embed config.ini
@@ -79,7 +80,7 @@ func init() {
 
 func main() {
 
-		e := echo.New()
+	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, "EchoFN")
 	})
