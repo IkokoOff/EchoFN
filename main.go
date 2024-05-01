@@ -216,7 +216,11 @@ func main() {
 	// 	go t.Listen()
 	// }
 
-	err := r.Listen("0.0.0.0" + aid.Config.API.Port)
+	port := os.Getenv("PORT")
+        if port == "" {
+        port = "8080" // Port par défaut si la variable d'environnement PORT n'est pas définie
+        }
+        err := r.Listen(":" + port)
 	if err != nil {
 		panic(fmt.Sprintf("(fiber) failed to listen: %v", err))
 	}
