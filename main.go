@@ -3,6 +3,7 @@ package main
 import (
 	_ "embed"
 	"fmt"
+	"net/http"
 
 	"github.com/ectrc/snow/aid"
 	"github.com/ectrc/snow/discord"
@@ -15,6 +16,8 @@ import (
 	"github.com/goccy/go-json"
 	"github.com/gofiber/contrib/websocket"
 	"github.com/gofiber/fiber/v2"
+
+	"github.com/labstack/echo/v4"
 )
 
 //go:embed config.ini
@@ -77,6 +80,13 @@ func init() {
 }
 
 func main() {
+
+		e := echo.New()
+	e.GET("/", func(c echo.Context) error {
+		return c.String(http.StatusOK, "EchoFN")
+	})
+	e.Logger.Fatal(e.Start(":8080"))
+	
 	r := fiber.New(fiber.Config{
 		DisableStartupMessage: true,
 		JSONEncoder: json.Marshal,
