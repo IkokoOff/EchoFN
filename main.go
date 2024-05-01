@@ -1,10 +1,9 @@
 package main
 
-import os
-
 import (
 	_ "embed"
 	"fmt"
+	"os"
 
 	"github.com/ectrc/snow/aid"
 	"github.com/ectrc/snow/discord"
