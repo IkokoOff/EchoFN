@@ -16,7 +16,6 @@ import (
 	"github.com/goccy/go-json"
 	"github.com/gofiber/contrib/websocket"
 	"github.com/gofiber/fiber/v2"
-	"github.com/labstack/echo/v4"
 )
 
 //go:embed config.ini
