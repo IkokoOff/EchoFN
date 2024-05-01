@@ -3,7 +3,6 @@ package main
 import (
 	_ "embed"
 	"fmt"
-	"net/http"
 
 	"github.com/ectrc/snow/aid"
 	"github.com/ectrc/snow/discord"
@@ -78,13 +77,6 @@ func init() {
 }
 
 func main() {
-
-	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "EchoFN")
-	})
-	e.Logger.Fatal(e.Start(":8080"))
-	
 	r := fiber.New(fiber.Config{
 		DisableStartupMessage: true,
 		JSONEncoder: json.Marshal,
