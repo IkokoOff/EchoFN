@@ -1,5 +1,7 @@
 package main
 
+import os
+
 import (
 	_ "embed"
 	"fmt"
