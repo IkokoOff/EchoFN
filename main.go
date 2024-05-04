@@ -3,6 +3,8 @@ package main
 import (
 	_ "embed"
 	"fmt"
+	"os"
+	"runtime"
 
 	"github.com/ectrc/snow/aid"
 	"github.com/ectrc/snow/discord"
@@ -216,8 +218,11 @@ func main() {
 	// 	go t.Listen()
 	// }
 
-	err := r.Listen("0.0.0.0" + aid.Config.API.Port)
-	if err != nil {
-		panic(fmt.Sprintf("(fiber) failed to listen: %v", err))
+        port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	if err := router.Run(":" + port); err != nil {
+        log.Panicf("error: %s", err)
 	}
 }
